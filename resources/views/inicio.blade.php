@@ -14,7 +14,7 @@
                     <td>Nome</td>
                     <td>Email</td>
                     <td>Senha</td>
-                </tr>  
+                </tr>   
             </thead> 
             <tbody>
                 @foreach($users as $value)

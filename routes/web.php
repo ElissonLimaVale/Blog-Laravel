@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Site\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $users = DB::select('select nome, email, senha from laravel.users;');
-    return view('inicio', ['users' => $users]);
-});
+    Route::get('/', HomeController::class); 
