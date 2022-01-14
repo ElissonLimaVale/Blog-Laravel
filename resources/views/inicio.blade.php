@@ -7,7 +7,7 @@
     </head>
 <body>
     <div class=container>
-        <h1>Usuários do sistema</h1>
+        <h1>Usuários do Sistema</h1>
         <table id="table" class="display striped" style="width:100%">
             <thead>
                 <tr>
