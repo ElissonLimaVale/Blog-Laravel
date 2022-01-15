@@ -13,5 +13,10 @@ use App\Http\Controllers\Site\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    
+Route::get('/', HomeController::class); 
 
-    Route::get('/', HomeController::class); 
+// Route::get('/', function () {
+//     $users = DB::select('select nome, email, senha from laravel.users;');
+//     return view('inicio', ['users' => $users]);
+// });

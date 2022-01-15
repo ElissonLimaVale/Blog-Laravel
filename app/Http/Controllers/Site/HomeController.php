@@ -15,7 +15,8 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view(view:'Home.Home');
+        $users = []; //DB::select('select nome, email, senha from laravel.users;');
+        return view('Home.Home', [ 'users' => $users]);
     }
 }
 
