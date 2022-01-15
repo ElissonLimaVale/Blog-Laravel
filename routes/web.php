@@ -14,7 +14,7 @@ use App\Http\Controllers\Site\HomeController;
 |
 */
     
-Route::get('/', HomeController::class); 
+Route::get('/', HomeController::class)->name('Site.Home'); 
 
 // Route::get('/', function () {
 //     $users = DB::select('select nome, email, senha from laravel.users;');
