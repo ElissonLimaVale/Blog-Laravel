@@ -63,6 +63,14 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-comment"></i></a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Posts</a>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0" method="Get" action="/search">
                     <input name="busca" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
