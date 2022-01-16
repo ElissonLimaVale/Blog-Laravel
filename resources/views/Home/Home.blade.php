@@ -2,9 +2,12 @@
 
 @section('content')
 
-<h1>Home</h1>
+<ul class="breadcrumb">
+    <li>Home/</li>
+</ul>
 
 @endsection
+
 
 @section('Scripts')
 <script>

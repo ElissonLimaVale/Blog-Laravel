@@ -7,16 +7,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function __invoke(Request $request)
     {
-        $users = []; //DB::select('select nome, email, senha from laravel.users;');
-        return view('Home.Home', [ 'users' => $users]);
+        return view('Home.Home');
     }
 }
 

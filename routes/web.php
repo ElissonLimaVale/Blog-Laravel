@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\HomeController;
+use App\Http\Controllers\Site\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,4 @@ use App\Http\Controllers\Site\HomeController;
     
 Route::get('/', HomeController::class)->name('Site.Home'); 
 
-// Route::get('/', function () {
-//     $users = DB::select('select nome, email, senha from laravel.users;');
-//     return view('inicio', ['users' => $users]);
-// });
+Route::get('/search', [SearchController::class, 'Search'])->name('Site.Search'); 
