@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.19.1/bootstrap-table.min.css" integrity="sha512-Ulm5pOx2O8n6XDa0CY2S+GfOmV2R2SrvCpVmhjsxi4VmvcqB5JM5POLuePq496f9CkeAtvPpJlcjLRcTPk79iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.jqueryui.min.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
         <link rel="stylesheet" href="{{asset('./css/app.css')}}"  />
         @yield('Styles')
     </head>
@@ -25,7 +27,7 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <div class="btn-group">
-                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-address-book"></i></a>
+                            <a title="RH" class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-address-book"></i></a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Teste</a>
                             </ul>
@@ -33,7 +35,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="btn-group">
-                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-list-alt"></i></a>
+                            <a title="Relatórios" class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-list-alt"></i></a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Teste</a>
                             </ul>
@@ -41,7 +43,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="btn-group">
-                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-mail-bulk"></i></a>
+                            <a title="E-mails Marketing" class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-mail-bulk"></i></a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Teste</a>
                             </ul>
@@ -49,7 +51,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="btn-group">
-                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-calculator"></i></a>
+                            <a title="Orçamentário" class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-calculator"></i></a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Teste</a>
                             </ul>
@@ -57,7 +59,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="btn-group">
-                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-ad"></i></a>
+                            <a title="Marketing" class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-ad"></i></a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Teste</a>
                             </ul>
@@ -65,9 +67,10 @@
                     </li>
                     <li class="nav-item">
                         <div class="btn-group">
-                            <a class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-comment"></i></a>
+                            <a title="Posts" class="btn dropdown-toggle menu-top-item" data-toggle="dropdown" href="#"><i class="fa fa-comment"></i></a>
                             <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Posts</a>
+                                <a class="dropdown-item" href="{{route('Site.Posts')}}">Posts</a>
+                                <a class="dropdown-item" href="{{route('Site.Posts.Create')}}">Create Post</a>
                             </ul>
                         </div>
                     </li>
@@ -79,7 +82,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid" style="padding-top: 10px;">
+        <div class="container-fluid" style="padding-top: 10px;padding-bottom: 10px;">
             @yield('content')
         </div>
 
@@ -91,16 +94,7 @@
                         <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                         <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Bootstrapious.com</a></p>
                     </div>
-                    <div class="col-lg-2 col-md-6">
-                        <h5 class="text-white mb-3">Quick links</h5>
-                        <ul class="list-unstyled text-muted">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Get started</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <h5 class="text-white mb-3">Quick links</h5>
                         <ul class="list-unstyled text-muted">
                             <li><a href="#">Home</a></li>
@@ -129,5 +123,8 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js" integrity="sha512-mULnawDVcCnsk9a4aG1QLZZ6rcce/jSzEGqUkeOLy0b6q0+T6syHrxlsAGH7ZVoqC93Pd0lBqd6WguPWih7VHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.19.1/bootstrap-table.min.js" integrity="sha512-SoNdA/8QMSSlEcJAXKdAALavPMfGJnoh/96Tosg3qxQhdktSAttyHT7ePJghxJNvLCeyJYtXcdrTgLvHHsbRcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         @yield('Scripts')
+        <script>
+            
+        </script>
     </body>
 </html>

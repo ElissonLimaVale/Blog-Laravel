@@ -2,31 +2,60 @@
 body {
     background-color: #e9ecef;
     --darck-color: rgb(72, 78, 78);
-}
-
-.navbar-dark {
-    background-color: var(--darck-color) !important;
-}
-.menu-top-item {
-    font-size: 35px;
-    border: 1px solid rgb(201, 207, 207, .2);
-    padding: 0px 30px;
-    color: rgb(201, 207, 207);
-}
-.menu-top-item:hover {
-    background-color: rgb(201, 207, 207);
-    color:var(--darck-color);
-}
-.menu-top-item::after {
-    display: none;
-}
-.dropdown-menu {
-    padding: 0px !important;
-}
-.dropdown-item {
-    text-align: center;
+    --white-back-color: #fff;
+    --white-color: rgb(201, 207, 207);
 }
 
 footer {
     background: var(--darck-color);
 }
+
+.navbar-dark {
+    background-color: var(--darck-color) !important;
+}
+
+.menu-top-item {
+    font-size: 35px;
+    border: 1px solid rgb(201, 207, 207, .2);
+    padding: 0px 30px;
+    color: var(--white-color);
+}
+
+.menu-top-item:hover {
+    background-color: var(--white-color);
+    color:var(--darck-color);
+}
+
+.menu-top-item::after {
+    display: none;
+}
+
+.dropdown-menu {
+    padding: 0px !important;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
+.breadcrumb {
+    background-color: rgb(255, 255, 255);
+}
+
+.widget {
+    background-color: var(--white-back-color);
+    border-radius: 3px;
+}
+
+.widget-head {
+    padding: 8px 15px 2px 15px !important;
+    background-color: var(--darck-color);
+    color: var(--white-color);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.widget-body {
+    padding: 15px;
+}
+
