@@ -4,12 +4,13 @@
 
 <div class="widget">
     <div class="widget-head">
-        <h4 class="widget-title">Create Post</h4>
+        <h4 class="widget-title">Edit Post</h4>
     </div>
     <div class="widget-body">
         <div class="col-md-12">
-            <form class="form" method="post" action="{{route('Site.Posts.Store')}}">
+            <form class="form" method="post" action="{{route('Site.Posts.Update')}}">
                 @csrf
+                <input name="id" value="{{$post->id}}" hidden/>
                 <fieldset>
                     <div class="row">
                         <div class="form-group col-md-6">

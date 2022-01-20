@@ -16,12 +16,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($posts as $post)
+                    @foreach($posts ?? '' as $post)
                         <tr>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->description }}</td>
-                            <td><a href="/posts/delete/{{$post->id}}"><i class="fa fa-trash"></i></a></td>
-                            <td><a href="/posts/edit/{{$post->id}}"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="{{route('Site.Posts.Edit', $post->id)}}"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="{{route('Site.Posts.Delete', $post->id)}}"><i class="fa fa-trash"></i></a></td>
                         </tr>
                     @endforeach
                 </tbody>

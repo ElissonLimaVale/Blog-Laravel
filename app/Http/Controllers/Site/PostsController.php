@@ -4,79 +4,53 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $posts = Post::all(); //query("select title, description, id from laravel.posts;");
+        $posts = Post::all();
         return view("Posts.Posts", [ 'posts' => $posts]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view("Posts.Create");
+        return view("Posts.Create", [ 'post' => new Post ]);
     }
 
     public function store(Request $request)
     {
-        Post::created($request->all());
-        return view("Posts.Posts");
+        $post = new Post;
+        $post->user_id = 1;
+        $post->title = $request->input('title', 'Não Consta');
+        $post->description = $request->input('description', 'Não Consta');
+        $post->post = $request->input('post', 'Não Consta');
+        $post->save();
+        return view("Posts.Create", ['post' => new Post]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view("Posts.Edit", [ 'post' => Post::where('id', $id)->first() ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $post = Post::find($request->input('id'));
+        $post->user_id = 1;
+        $post->title = $request->input('title', 'Não Consta');
+        $post->description = $request->input('description', 'Não Consta');
+        $post->post = $request->input('post', 'Não Consta');
+        $post->update();
+        return $this->index();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return $this->index();
     }
+
 }
