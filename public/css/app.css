@@ -48,14 +48,43 @@ footer {
 }
 
 .widget-head {
-    padding: 8px 15px 2px 15px !important;
+    padding: 10px 15px;
     background-color: var(--darck-color);
     color: var(--white-color);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
+.widget-title {
+    font-size: 18px;
+}
+
 .widget-body {
     padding: 15px;
 }
 
+thead td {
+    font-weight: bold;
+    color: var(--darck-color);
+    border-bottom: 0.3px solid rgba(0,0,0, .2);
+}
+
+thead td::after {
+    color: var(--darck-color);
+}
+
+.btn-table {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.row {
+    margin: 0px !important;
+}
+/* 
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom:0;
+} */
